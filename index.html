@@ -3,506 +3,313 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>毅鱼数字科技 — yiyu028.com</title>
-<meta name="description" content="毅鱼数字科技，AI驱动的内容创作平台。毅鱼漫剧、智能工具、数字产品。">
+<title>毅鱼数字科技 · 让创作更简单</title>
+<meta name="description" content="毅鱼数字科技，AI驱动的内容创作平台。旗下毅鱼漫剧、毅鱼仓储、毅鱼教育等产品。">
 <meta name="theme-color" content="#FF5F1F">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%23FF5F1F'/><text x='50' y='68' text-anchor='middle' fill='white' font-size='52' font-weight='bold'>毅</text></svg>">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
 <style>
-:root {
-  --bg: #0a0a14;
-  --bg2: #111122;
-  --bg3: #1a1a2e;
-  --accent: #FF5F1F;
-  --accent2: #FF8C42;
-  --gold: #F5A623;
-  --text: #f0f0f5;
-  --text2: #a0a0b8;
-  --card: rgba(255,255,255,0.04);
-  --border: rgba(255,255,255,0.06);
-  --maxw: 1100px;
+:root{
+  --bg:#F8F9FC;--bg2:#EEF1F7;--card:#fff;--text:#1a1a2e;--text2:#5a5d72;--text3:#8b8fa3;
+  --brand:#FF5F1F;--blight:rgba(255,95,31,0.08);--purple:#6C5CE7;--green:#00B894;--blue:#0984E3;
+  --shadow-sm:0 2px 8px rgba(0,0,0,.04);--shadow-md:0 8px 30px rgba(0,0,0,.07);
+  --shadow-lg:0 20px 60px rgba(0,0,0,.1);--radius:20px;--maxw:1200px;--trans:0.3s cubic-bezier(0.4,0,0.2,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  font-family:'PingFang SC','Microsoft YaHei',-apple-system,sans-serif;
-  background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;
-  line-height:1.6;
-}
-
-/* === NAV === */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  background:rgba(10,10,20,0.85);backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--border);padding:0 24px;
-  transition:all .3s;
-}
-nav.scroll{background:rgba(10,10,20,0.95);box-shadow:0 4px 30px rgba(0,0,0,0.5)}
-.nav-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo-icon{
-  width:40px;height:40px;border-radius:12px;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  display:flex;align-items:center;justify-content:center;
-  font-size:22px;font-weight:900;color:#fff;
-}
-.logo-text{font-size:20px;font-weight:800;color:var(--text);letter-spacing:2px}
-.logo-sub{font-size:10px;color:var(--text2);letter-spacing:3px;margin-top:-2px}
-.nav-links{display:flex;gap:32px}
-.nav-links a{
-  color:var(--text2);text-decoration:none;font-size:14px;font-weight:500;
-  transition:color .2s;position:relative
-}
-.nav-links a:hover,.nav-links a.active{color:var(--accent)}
-.nav-links a::after{
-  content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;
-  background:var(--accent);transform:scaleX(0);transition:transform .2s
-}
-.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
-
-/* === SECTIONS === */
-section{padding:100px 24px;max-width:var(--maxw);margin:0 auto}
-.section-badge{
-  display:inline-block;padding:6px 16px;border-radius:20px;
-  font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  background:rgba(255,95,31,0.1);color:var(--accent);margin-bottom:20px;
-}
-.section-title{font-size:42px;font-weight:900;letter-spacing:2px;margin-bottom:16px;line-height:1.2}
-.section-desc{font-size:17px;color:var(--text2);max-width:600px;margin-bottom:48px}
-
-/* === HERO === */
-.hero{
-  padding:160px 24px 120px;max-width:var(--maxw);margin:0 auto;
-  display:flex;align-items:center;gap:60px;min-height:100vh;
-}
-.hero-left{flex:1}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:8px 18px;border-radius:24px;
-  background:rgba(255,95,31,0.08);border:1px solid rgba(255,95,31,0.2);
-  font-size:13px;color:var(--accent);margin-bottom:28px
-}
-.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(255,95,31,0.4)}50%{opacity:0.6;box-shadow:0 0 0 8px rgba(255,95,31,0)}}
-.hero h1{font-size:56px;font-weight:900;line-height:1.15;letter-spacing:3px;margin-bottom:20px}
-.hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{font-size:18px;color:var(--text2);margin-bottom:36px;max-width:500px}
-.btn{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:14px 32px;border-radius:14px;font-size:16px;font-weight:700;
-  text-decoration:none;transition:all .3s;cursor:pointer;border:none
-}
-.btn-primary{
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#fff;box-shadow:0 8px 30px rgba(255,95,31,0.3)
-}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(255,95,31,0.4)}
-.btn-ghost{
-  background:rgba(255,255,255,0.06);color:var(--text);
-  border:1px solid var(--border)
-}
-.btn-ghost:hover{background:rgba(255,255,255,0.1)}
-.btn-group{display:flex;gap:14px;flex-wrap:wrap}
-
-.hero-right{
-  flex:1;display:flex;justify-content:center;align-items:center;
-  position:relative
-}
-.hero-phone{
-  width:280px;height:560px;border-radius:36px;
-  background:var(--bg3);border:3px solid var(--border);
-  box-shadow:0 30px 80px rgba(255,95,31,0.15),0 0 120px rgba(255,95,31,0.08);
-  position:relative;overflow:hidden;
-}
-.hero-phone::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,transparent,var(--accent),var(--accent2),transparent)
-}
-.phone-screen{
-  padding:20px;height:100%;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;text-align:center
-}
-.phone-icon{font-size:72px;margin-bottom:16px}
-.phone-app-name{font-size:24px;font-weight:900;letter-spacing:3px;margin-bottom:8px}
-.phone-app-desc{font-size:13px;color:var(--text2)}
-.hero-glow{
-  position:absolute;width:400px;height:400px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,95,31,0.12) 0%,transparent 70%);
-  pointer-events:none;z-index:-1
-}
-.hero-float{animation:float 4s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
-
-/* === PRODUCTS GRID === */
-.products-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px
-}
-.product-card{
-  background:var(--card);border:1px solid var(--border);border-radius:20px;
-  padding:32px;transition:all .3s;position:relative;overflow:hidden
-}
-.product-card:hover{
-  transform:translateY(-4px);
-  border-color:rgba(255,95,31,0.3);box-shadow:0 20px 60px rgba(255,95,31,0.08)
-}
-.product-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,transparent,var(--accent),transparent);
-  opacity:0;transition:opacity .3s
-}
-.product-card:hover::before{opacity:1}
-.product-icon{font-size:48px;margin-bottom:20px}
-.product-name{font-size:22px;font-weight:800;margin-bottom:8px}
-.product-desc{font-size:14px;color:var(--text2);margin-bottom:20px;line-height:1.7}
-.product-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
-.product-tag{
-  padding:4px 12px;border-radius:12px;font-size:11px;font-weight:600;
-  background:rgba(255,95,31,0.08);color:var(--accent)
-}
-.product-link{
-  display:inline-flex;align-items:center;gap:6px;
-  color:var(--accent);text-decoration:none;font-size:14px;font-weight:600;
-  transition:gap .2s
-}
-.product-link:hover{gap:12px}
-
-/* === DOWNLOAD SECTION === */
-.download-hero{
-  text-align:center;padding:120px 24px 60px;
-  background:radial-gradient(ellipse at center,rgba(255,95,31,0.06) 0%,transparent 70%)
-}
-.download-card{
-  max-width:480px;margin:0 auto;
-  background:var(--card);border:1px solid var(--border);border-radius:24px;
-  padding:40px;text-align:center
-}
-.download-card .icon{font-size:80px;margin-bottom:20px}
-.download-card .name{font-size:28px;font-weight:900;letter-spacing:3px;margin-bottom:8px}
-.download-card .version{font-size:13px;color:var(--accent);margin-bottom:24px}
-.download-btn{
-  display:flex;align-items:center;justify-content:center;gap:12px;
-  width:100%;padding:18px;border-radius:16px;
-  background:linear-gradient(135deg,#FF5F1F,#e8501a);
-  color:#fff;font-size:18px;font-weight:700;text-decoration:none;
-  transition:all .3s;margin-bottom:12px
-}
-.download-btn:hover{transform:scale(1.02);box-shadow:0 12px 40px rgba(255,95,31,0.3)}
-.download-btn-small{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  width:100%;padding:14px;border-radius:16px;
-  background:rgba(255,255,255,0.05);border:1px solid var(--border);
-  color:var(--text);font-size:14px;font-weight:600;text-decoration:none;
-  transition:all .3s;
-  margin-bottom:8px
-}
-.download-btn-small:hover{background:rgba(255,255,255,0.08)}
-
-/* === INSTALL GUIDE === */
-.guide-steps{display:flex;flex-direction:column;gap:20px;max-width:600px;margin:0 auto}
-.guide-step{
-  display:flex;gap:20px;align-items:flex-start;
-  background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px
-}
-.step-num{
-  width:44px;height:44px;border-radius:12px;flex-shrink:0;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  display:flex;align-items:center;justify-content:center;
-  font-size:20px;font-weight:900;color:#fff
-}
-.step-content h4{font-size:17px;font-weight:700;margin-bottom:4px}
-.step-content p{font-size:14px;color:var(--text2)}
-
-/* === STATS === */
-.stats-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px
-}
-.stat{
-  text-align:center;padding:24px;
-  background:var(--card);border:1px solid var(--border);border-radius:16px
-}
-.stat-num{font-size:36px;font-weight:900;color:var(--accent);margin-bottom:4px}
-.stat-label{font-size:13px;color:var(--text2)}
-/* === FOOTER === */
-footer{
-  border-top:1px solid var(--border);padding:48px 24px;
-  text-align:center;color:var(--text2);font-size:14px
-}
-footer a{color:var(--accent);text-decoration:none}
-.footer-links{display:flex;justify-content:center;gap:32px;margin-bottom:20px}
-.footer-links a{color:var(--text2);text-decoration:none;transition:color .2s}
-.footer-links a:hover{color:var(--accent)}
-
-/* === MOBILE === */
+body{font-family:'PingFang SC','Microsoft YaHei',-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;line-height:1.6}
+#glow{position:fixed;pointer-events:none;z-index:9999;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(108,92,231,.12) 0%,rgba(255,95,31,.05) 35%,transparent 70%);transform:translate(-50%,-50%);opacity:0;transition:opacity .3s}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.85);backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid rgba(0,0,0,.06);padding:0 24px;height:68px;transition:all .2s}
+nav.scrolled{box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.ni{max-width:var(--maxw);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between}
+.nl{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nl img{width:38px;height:38px;border-radius:10px}
+.nlt{font-size:19px;font-weight:800;color:var(--text);letter-spacing:1px}
+.nlk{display:flex;gap:4px;align-items:center}
+.nlk a{color:var(--text2);text-decoration:none;font-size:14px;font-weight:500;padding:8px 16px;border-radius:10px;transition:all .2s}
+.nlk a:hover{color:var(--brand);background:var(--blight)}
+.nlk a.nav-cta{padding:10px 22px!important;border-radius:12px!important;background:linear-gradient(135deg,#FF5F1F,#FF8C42)!important;color:#fff!important;font-weight:700!important;box-shadow:0 4px 14px rgba(255,95,31,.3)}
+.nlk a.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(255,95,31,.4)!important}
+.hero{position:relative;overflow:hidden;padding:140px 24px 100px;text-align:center}
+.hbg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35;animation:bf 8s ease-in-out infinite}
+.hb:nth-child(1){width:450px;height:450px;top:-10%;left:-5%;background:rgba(108,92,231,.22)}
+.hb:nth-child(2){width:380px;height:380px;top:40%;right:-8%;background:rgba(255,95,31,.18);animation-delay:-3s}
+.hb:nth-child(3){width:320px;height:320px;bottom:-10%;left:30%;background:rgba(0,184,148,.12);animation-delay:-6s}
+@keyframes bf{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(30px,-20px) scale(1.05)}50%{transform:translate(-20px,15px) scale(.95)}75%{transform:translate(-15px,-25px) scale(1.02)}}
+.hc{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto}
+.hbadge{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:24px;background:var(--card);border:1px solid rgba(0,0,0,.06);box-shadow:var(--shadow-sm);font-size:13px;color:var(--purple);font-weight:600;margin-bottom:28px}
+.hbadge .pd{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pd 2s infinite}
+@keyframes pd{0%,100%{box-shadow:0 0 0 0 rgba(0,184,148,.4)}50%{box-shadow:0 0 0 8px rgba(0,184,148,0)}}
+.hero h1{font-size:clamp(36px,6vw,60px);font-weight:900;line-height:1.2;letter-spacing:2px;margin-bottom:20px}
+.hero h1 .gt{background:linear-gradient(135deg,#FF5F1F,#6C5CE7,#00B894);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:18px;color:var(--text2);max-width:600px;margin:0 auto 36px;line-height:1.8}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:14px;font-size:16px;font-weight:700;text-decoration:none;transition:all var(--trans);cursor:pointer;border:none;position:relative;overflow:hidden}
+.btn:active{transform:scale(.96)}
+.btn1{background:linear-gradient(135deg,#FF5F1F,#FF8C42);color:#fff;box-shadow:0 8px 30px rgba(255,95,31,.3)}
+.btn1:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(255,95,31,.4)}
+.btn2{background:var(--card);color:var(--text);border:1px solid rgba(0,0,0,.08);box-shadow:var(--shadow-sm)}
+.btn2:hover{background:var(--bg2);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.hbtn{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.4);transform:scale(0);animation:ra .6s ease-out;pointer-events:none}
+@keyframes ra{to{transform:scale(4);opacity:0}}
+.si2{margin-top:50px;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.45;animation:bd 2s infinite}
+@keyframes bd{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
+.sm{width:24px;height:38px;border-radius:14px;border:2px solid var(--text3)}
+.sw{width:4px;height:8px;border-radius:2px;background:var(--text3);margin:6px auto 0;animation:sw2 2s infinite}
+@keyframes sw2{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(8px);opacity:.2}}
+section{padding:100px 24px}
+.si{max-width:var(--maxw);margin:0 auto}
+.tag{display:inline-block;padding:6px 16px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.tp{background:rgba(108,92,231,.1);color:var(--purple)}
+.tg{background:rgba(0,184,148,.1);color:var(--green)}
+.to{background:rgba(255,95,31,.1);color:var(--brand)}
+.tb{background:rgba(9,132,227,.1);color:var(--blue)}
+h2{font-size:clamp(28px,5vw,44px);font-weight:900;letter-spacing:1px;margin-bottom:16px;line-height:1.3}
+.sub{font-size:17px;color:var(--text2);max-width:600px;margin-bottom:48px;line-height:1.7}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+.pc{background:var(--card);border-radius:var(--radius);border:1px solid rgba(0,0,0,.06);padding:36px;transition:all var(--trans);position:relative;overflow:hidden;cursor:pointer}
+.pc:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg),0 0 40px rgba(108,92,231,.1)}
+.pc::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--brand),var(--green));transform:scaleX(0);transition:transform var(--trans)}
+.pc:hover::after{transform:scaleX(1)}
+.pci{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:20px}
+.pci-o{background:rgba(255,95,31,.1)}.pci-p{background:rgba(108,92,231,.1)}.pci-g{background:rgba(0,184,148,.1)}.pci-b{background:rgba(9,132,227,.1)}
+.pc h3{font-size:22px;font-weight:800;margin-bottom:8px}
+.pc .desc{font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:16px}
+.pc .tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.pc .t{padding:4px 12px;border-radius:10px;font-size:11px;font-weight:600;background:var(--bg2);color:var(--text2)}
+.pc .lnk{display:inline-flex;align-items:center;gap:6px;color:var(--brand);text-decoration:none;font-size:14px;font-weight:600;transition:gap .2s}
+.pc .lnk:hover{gap:12px}
+.swrap{background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);margin-top:60px;overflow:hidden}
+.sg{display:grid;grid-template-columns:repeat(4,1fr)}
+.si3{padding:40px 24px;text-align:center;border-right:1px solid rgba(0,0,0,.04);transition:all var(--trans);cursor:default}
+.si3:last-child{border-right:none}
+.si3:hover{background:#FAFBFC}
+.si3:hover .sn{transform:scale(1.1)}
+.sn{font-size:38px;font-weight:900;transition:transform .2s;background:linear-gradient(135deg,#FF5F1F,#6C5CE7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sl{font-size:13px;color:var(--text3);margin-top:4px}
+.dlc{background:var(--card);border-radius:var(--radius);border:1px solid rgba(0,0,0,.06);box-shadow:var(--shadow-md);padding:48px;text-align:center;max-width:500px;margin:0 auto;transition:all var(--trans)}
+.dlc:hover{box-shadow:var(--shadow-lg)}
+.dli{font-size:72px;margin-bottom:16px}
+.dlc h3{font-size:30px;font-weight:900;letter-spacing:3px;margin-bottom:4px}
+.dlv{font-size:13px;color:var(--brand);margin-bottom:28px;font-weight:600}
+.dlb{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px;border-radius:16px;font-size:17px;font-weight:700;text-decoration:none;transition:all var(--trans);margin-bottom:10px;border:none;cursor:pointer}
+.dla{background:linear-gradient(135deg,#6C5CE7,#a29bfe);color:#fff;box-shadow:0 8px 30px rgba(108,92,231,.3)}
+.dla:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(108,92,231,.4)}
+.dli2{background:var(--bg2);color:var(--text);border:1px solid rgba(0,0,0,.06)}
+.dli2:hover{background:#e8eaf0}
+.dlw{background:#fff;color:var(--text2);border:1px solid rgba(0,0,0,.06);font-size:14px}
+.dlw:hover{background:var(--bg)}
+.steps{display:flex;flex-direction:column;gap:16px;max-width:680px;margin:40px auto 0}
+.step{display:flex;gap:20px;align-items:flex-start;background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:24px;transition:all var(--trans);cursor:default}
+.step:hover{transform:translateX(4px);box-shadow:var(--shadow-md)}
+.sn2{width:44px;height:44px;border-radius:12px;flex-shrink:0;background:linear-gradient(135deg,#6C5CE7,#a29bfe);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900}
+.sb h4{font-size:17px;font-weight:700;margin-bottom:4px}
+.sb p{font-size:14px;color:var(--text2)}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ac{background:var(--card);border-radius:var(--radius);border:1px solid rgba(0,0,0,.06);padding:36px;transition:all var(--trans)}
+.ac:hover{box-shadow:var(--shadow-md);transform:translateY(-4px)}
+footer{background:var(--card);border-top:1px solid rgba(0,0,0,.06);padding:48px 24px 32px;text-align:center}
+.fl{display:flex;justify-content:center;gap:32px;margin-bottom:24px;flex-wrap:wrap}
+.fl a{color:var(--text2);text-decoration:none;font-size:14px;transition:color .2s}
+.fl a:hover{color:var(--brand)}
+footer p{color:var(--text3);font-size:13px;line-height:2}
+#pc{position:fixed;top:0;left:0;z-index:0;pointer-events:none}
+.rev{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s}
+.rev.v{opacity:1;transform:translateY(0)}
 @media(max-width:768px){
-  .hero{flex-direction:column;text-align:center;padding:120px 24px 60px}
-  .hero h1{font-size:36px}
-  .hero p{max-width:100%}
-  .btn-group{justify-content:center}
-  .hero-phone{width:200px;height:400px}
-  .nav-links{display:none}
-  .section-title{font-size:30px}
-  .stats-grid{grid-template-columns:repeat(2,1fr)}
-  section{padding:60px 16px}
+  .hero{padding:110px 20px 60px}.hero h1{font-size:32px}.sg{grid-template-columns:repeat(2,1fr)}
+  .si3{padding:28px 16px}.sn{font-size:28px}.ag{grid-template-columns:1fr}
+  .nlk a:not(.nav-cta){display:none}section{padding:60px 16px}.dlc{padding:32px 24px}.pc{padding:28px}
 }
-
-/* Animations */
-.fade-in{opacity:0;transform:translateY(30px);transition:all .6s ease-out}
-.fade-in.visible{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
+<div id="glow"></div>
+<canvas id="pc"></canvas>
 
 <nav id="nav">
-  <div class="nav-inner">
-    <a href="#" class="logo">
-      <div class="logo-icon">毅</div>
-      <div>
-        <div class="logo-text">毅鱼科技</div>
-        <div class="logo-sub">yiyu028.com</div>
-      </div>
+  <div class="ni">
+    <a href="#" class="nl">
+      <img src="icon-192.png" alt="毅鱼">
+      <span class="nlt">毅鱼科技</span>
     </a>
-    <div class="nav-links">
-      <a href="#home" class="active">首页</a>
+    <div class="nlk">
+      <a href="#home">首页</a>
       <a href="#products">产品</a>
       <a href="#download">下载</a>
       <a href="#about">关于</a>
+      <a href="#download" class="nav-cta">免费下载</a>
     </div>
   </div>
 </nav>
 
-<!-- ══════════ HERO ══════════ -->
 <section class="hero" id="home">
-  <div class="hero-left">
-    <div class="hero-badge"><span class="dot"></span>AI驱动的内容创作平台</div>
-    <h1>让每个人<br><span>都能创作</span></h1>
-    <p>毅鱼数字科技致力于用AI技术降低内容创作门槛。旗下毅鱼漫剧，一键生成AI短剧，从剧本到成片全自动。</p>
-    <div class="btn-group">
-      <a href="#download" class="btn btn-primary">📥 下载App</a>
-      <a href="#products" class="btn btn-ghost">查看产品 →</a>
-    </div>
+  <div class="hbg">
+    <div class="hb"></div><div class="hb"></div><div class="hb"></div>
   </div>
-  <div class="hero-right">
-    <div class="hero-glow"></div>
-    <div class="hero-phone hero-float">
-      <div class="phone-screen">
-        <div class="phone-icon">🎬</div>
-        <div class="phone-app-name">毅鱼漫剧</div>
-        <div class="phone-app-desc">AI智能短剧创作平台</div>
-      </div>
+  <div class="hc">
+    <div class="hbadge"><span class="pd"></span>AI驱动 · 内容创作新时代</div>
+    <h1>用AI<br><span class="gt">重新定义创作</span></h1>
+    <p>毅鱼数字科技 — 让每个人都能轻松创作短剧、管理业务、学习教育。<br>AI技术让复杂的创作流程变得像刷短视频一样简单。</p>
+    <div class="hbtn">
+      <a href="#download" class="btn btn1">🚀 立即体验</a>
+      <a href="#products" class="btn btn2">了解更多 →</a>
+    </div>
+    <div class="si2">
+      <div class="sm"><div class="sw"></div></div>
+      <span style="font-size:12px;color:var(--text3)">向下滚动探索</span>
     </div>
   </div>
 </section>
 
-<!-- ══════════ STATS ══════════ -->
-<section>
-  <div class="stats-grid">
-    <div class="stat fade-in">
-      <div class="stat-num">3</div>
-      <div class="stat-label">核心产品线</div>
-    </div>
-    <div class="stat fade-in">
-      <div class="stat-num">AI</div>
-      <div class="stat-label">智能驱动引擎</div>
-    </div>
-    <div class="stat fade-in">
-      <div class="stat-num">24h</div>
-      <div class="stat-label">全自动创作</div>
-    </div>
-    <div class="stat fade-in">
-      <div class="stat-num">∞</div>
-      <div class="stat-label">无限创作可能</div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ PRODUCTS ══════════ -->
 <section id="products">
-  <div class="section-badge">产品中心</div>
-  <div class="section-title">我们的产品</div>
-  <div class="section-desc">AI赋能内容创作，让技术服务于创意</div>
-  <div class="products-grid">
-    <div class="product-card fade-in">
-      <div class="product-icon">🎬</div>
-      <div class="product-name">毅鱼漫剧</div>
-      <div class="product-desc">AI驱动的短剧全自动生成平台。输入灵感即可自动完成剧本、角色、分镜、配音、画面和视频全流程创作。从编剧到成片，一站式完成。</div>
-      <div class="product-tags">
-        <span class="product-tag">AI编剧</span>
-        <span class="product-tag">智能分镜</span>
-        <span class="product-tag">自动配音</span>
-        <span class="product-tag">视频合成</span>
+  <div class="si">
+    <div class="tag tp">产品中心</div>
+    <h2>AI驱动的产品矩阵</h2>
+    <p class="sub">从内容创作到企业智能，毅鱼科技用AI重新定义效率。</p>
+    <div class="pg">
+      <div class="pc rev">
+        <div class="pci pci-o">🎬</div>
+        <h3>毅鱼漫剧</h3>
+        <p class="desc">AI全自动短剧生成平台。输入灵感，AI自动完成剧本、角色、分镜、配音、画面、视频全流程。从编剧到成片，一键搞定。</p>
+        <div class="tags"><span class="t">AI编剧</span><span class="t">智能分镜</span><span class="t">自动配音</span><span class="t">视频合成</span></div>
+        <a href="#download" class="lnk">立即下载 →</a>
       </div>
-      <a href="#download" class="product-link">立即下载 →</a>
-    </div>
-    <div class="product-card fade-in">
-      <div class="product-icon">📊</div>
-      <div class="product-name">毅鱼仓储</div>
-      <div class="product-desc">智能仓库管理系统。支持入库、出库、盘点、扫码、多端协作。实时库存预警，全流程可追溯，适用中小型企业仓库管理。</div>
-      <div class="product-tags">
-        <span class="product-tag">扫码出入库</span>
-        <span class="product-tag">库存预警</span>
-        <span class="product-tag">多端协作</span>
+      <div class="pc rev">
+        <div class="pci pci-p">📊</div>
+        <h3>毅鱼仓储 WMS Pro</h3>
+        <p class="desc">智能仓库管理系统。扫码出入库、实时库存预警、多端协作、全流程追溯。让仓库管理像刷手机一样简单。</p>
+        <div class="tags"><span class="t">扫码出入库</span><span class="t">库存预警</span><span class="t">实时同步</span><span class="t">多端协作</span></div>
+        <a href="#" class="lnk">了解更多 →</a>
       </div>
-      <a href="#" class="product-link">敬请期待 →</a>
-    </div>
-    <div class="product-card fade-in">
-      <div class="product-icon">🎓</div>
-      <div class="product-name">毅鱼教育</div>
-      <div class="product-desc">精品微课课件生成平台。输入讲义自动生成精美PPT与互动课件，支持编程教学、音乐、医学等多种领域。</div>
-      <div class="product-tags">
-        <span class="product-tag">智能排版</span>
-        <span class="product-tag">互动课件</span>
-        <span class="product-tag">多领域覆盖</span>
-      </div>
-      <a href="#" class="product-link">敬请期待 →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ DOWNLOAD ══════════ -->
-<section id="download">
-  <div class="section-badge">下载中心</div>
-  <div class="section-title">毅鱼漫剧</div>
-  <div class="section-desc">下载安装，开启你的AI创作之旅</div>
-
-  <div class="download-card fade-in">
-    <div class="icon">🎬</div>
-    <div class="name">毅鱼漫剧</div>
-    <div class="version">v1.0.0 · 47.2 MB</div>
-
-    <a href="yiwei-comics.apk" class="download-btn" download>
-      <span style="font-size:24px">🤖</span> 下载 Android 安装包
-    </a>
-
-    <a href="javascript:void(0)" class="download-btn-small" onclick="pwaInstall()">
-      <span style="font-size:20px">🍎</span> iOS — 添加到主屏幕（PWA）
-    </a>
-
-    <a href="/app" class="download-btn-small" target="_blank">
-      <span style="font-size:20px">🌐</span> 直接打开 Web 版
-    </a>
-  </div>
-
-  <div style="margin-top:60px">
-    <div class="section-badge" style="margin:0 auto;display:table">安装教程</div>
-    <h3 style="text-align:center;font-size:28px;margin:20px 0 40px;font-weight:800">三分钟快速安装</h3>
-    <div class="guide-steps">
-      <div class="guide-step fade-in">
-        <div class="step-num">1</div>
-        <div class="step-content">
-          <h4>下载安装包</h4>
-          <p>点击上方下载按钮获取毅鱼漫剧安装包。Android用户下载APK文件，iOS用户使用PWA方案。</p>
-        </div>
-      </div>
-      <div class="guide-step fade-in">
-        <div class="step-num">2</div>
-        <div class="step-content">
-          <h4>安装应用</h4>
-          <p><b>Android</b>：打开APK文件，允许安装未知来源应用，按提示完成安装。<br><b>iOS</b>：Safari浏览器打开，点击分享 → 添加到主屏幕。</p>
-        </div>
-      </div>
-      <div class="guide-step fade-in">
-        <div class="step-num">3</div>
-        <div class="step-content">
-          <h4>开始创作</h4>
-          <p>打开毅鱼漫剧App，输入灵感或主题，AI将自动生成完整的短剧内容。从剧本到视频，一键搞定！</p>
-        </div>
+      <div class="pc rev">
+        <div class="pci pci-g">🎓</div>
+        <h3>毅鱼教育</h3>
+        <p class="desc">AI智能课件生成平台。上传讲义，自动生成精美PPT与互动课件。覆盖编程、音乐、医学等多个领域。</p>
+        <div class="tags"><span class="t">AI排版</span><span class="t">互动课件</span><span class="t">编程教学</span><span class="t">多领域</span></div>
+        <a href="#" class="lnk">了解更多 →</a>
       </div>
     </div>
-  </div>
-
-  <!-- FAQ -->
-  <div style="margin-top:60px">
-    <div class="section-badge" style="margin:0 auto;display:table">常见问题</div>
-    <h3 style="text-align:center;font-size:28px;margin:20px 0 40px;font-weight:800">FAQ</h3>
-    <div class="products-grid">
-      <div class="product-card fade-in">
-        <div class="product-name" style="font-size:17px">❓ 安装包安全吗？</div>
-        <div class="product-desc">毅鱼漫剧APK经过严格测试和签名，不会被系统误报。安装时如提示"未知来源"，请放心授权。</div>
-      </div>
-      <div class="product-card fade-in">
-        <div class="product-name" style="font-size:17px">❓ iOS如何安装？</div>
-        <div class="product-desc">iOS采用PWA方案（不通过App Store）。Safari打开网站 → 分享 → 添加到主屏幕，桌面即出现App图标。</div>
-      </div>
-      <div class="product-card fade-in">
-        <div class="product-name" style="font-size:17px">❓ 需要联网吗？</div>
-        <div class="product-desc">AI创作需要联网调用模型服务。但已生成的内容支持离线浏览和回看。</div>
+    <div class="swrap rev">
+      <div class="sg">
+        <div class="si3"><div class="sn" data-n="3">0</div><div class="sl">核心产品线</div></div>
+        <div class="si3"><div class="sn" data-n="100">0</div><div class="sl">AI算力集群</div></div>
+        <div class="si3"><div class="sn" data-n="24">0</div><div class="sl">小时自动创作</div></div>
+        <div class="si3"><div class="sn" data-n="99">0</div><div class="sl">% 用户好评率</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ ABOUT ══════════ -->
+<section id="download" style="background:linear-gradient(180deg,#F8F9FC,#fff 100px,#fff)">
+  <div class="si" style="text-align:center">
+    <div class="tag to" style="margin:0 auto;display:table">下载中心</div>
+    <h2>毅鱼漫剧</h2>
+    <p class="sub" style="margin:0 auto 40px">下载安装，开启AI创作之旅</p>
+    <div class="dlc rev">
+      <div class="dli">🎬</div>
+      <h3>毅鱼漫剧</h3>
+      <p class="dlv">v1.0.0 · APK 准备中</p>
+      <a href="yiwei-comics.apk" class="dlb dla" download>🤖 下载 Android 安装包</a>
+      <button class="dlb dli2" onclick="pwaInstall()">🍎 iOS · 添加到主屏幕</button>
+      <a href="/app" class="dlb dlw" target="_blank">🌐 直接打开 Web 版</a>
+    </div>
+    <div style="margin-top:60px">
+      <div class="tag tb" style="margin:0 auto;display:table">安装指南</div>
+      <h3 style="font-size:28px;margin:20px 0 32px">三分钟快速安装</h3>
+      <div class="steps">
+        <div class="step rev">
+          <div class="sn2">1</div>
+          <div class="sb"><h4>📥 下载安装包</h4><p>点击上方按钮获取。Android下载APK，iOS选择PWA方式。</p></div>
+        </div>
+        <div class="step rev">
+          <div class="sn2">2</div>
+          <div class="sb"><h4>📱 安装应用</h4><p><b>Android</b>：打开APK → 允许「未知来源」安装 → 完成。<br><b>iOS</b>：Safari打开 → 底部「分享」→ 「添加到主屏幕」</p></div>
+        </div>
+        <div class="step rev">
+          <div class="sn2">3</div>
+          <div class="sb"><h4>✨ 开始创作</h4><p>打开毅鱼漫剧，输入灵感或主题，AI自动生成完整短剧。从剧本到视频，一键搞定！</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="about">
-  <div class="section-badge">关于我们</div>
-  <div class="section-title">毅鱼数字科技</div>
-  <div class="section-desc">成立于2025年，致力于用AI技术赋能内容创作，让每个人都能成为创作者</div>
-  <div style="display:flex;gap:24px;flex-wrap:wrap">
-    <div class="product-card fade-in" style="flex:1;min-width:280px">
-      <div class="product-icon">🎯</div>
-      <div class="product-name">我们的使命</div>
-      <div class="product-desc">降低内容创作门槛，让AI技术普惠每个人。无论是短剧、教育还是企业应用，我们都提供简单易用的智能工具。</div>
-    </div>
-    <div class="product-card fade-in" style="flex:1;min-width:280px">
-      <div class="product-icon">📍</div>
-      <div class="product-name">联系我们</div>
-      <div class="product-desc" style="line-height:2.2">
-        🌐 www.yiyu028.com<br>
-        📧 contact@yiyu028.com<br>
-        📍 四川省成都市<br>
-        💬 微信公众号：毅鱼科技
+  <div class="si">
+    <div class="tag tg">关于我们</div>
+    <h2>毅鱼数字科技</h2>
+    <p class="sub">成立于2025年，致力于用AI技术降低内容创作门槛，赋能各行各业。</p>
+    <div class="ag">
+      <div class="ac rev">
+        <div style="font-size:40px;margin-bottom:16px">🎯</div>
+        <h3 style="font-size:22px;font-weight:800;margin-bottom:8px">我们的使命</h3>
+        <p style="color:var(--text2);line-height:1.8">让AI技术普惠每一个人。无论短剧创作、企业管理还是教育学习，我们都提供简单、智能、好用的工具。复杂交给AI，你只需要灵感。</p>
+      </div>
+      <div class="ac rev">
+        <div style="font-size:40px;margin-bottom:16px">📍</div>
+        <h3 style="font-size:22px;font-weight:800;margin-bottom:8px">联系我们</h3>
+        <p style="color:var(--text2);line-height:2.2">🌐 yiyu0328.com<br>📧 contact@yiyu0328.com<br>📍 四川省成都市<br>💬 微信公众号：毅鱼科技</p>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-links">
-    <a href="#home">首页</a>
-    <a href="#products">产品</a>
-    <a href="#download">下载</a>
-    <a href="#about">关于</a>
+  <div class="fl">
+    <a href="#home">首页</a><a href="#products">产品</a><a href="#download">下载</a><a href="#about">关于</a>
   </div>
-  <p>© 2025 毅鱼数字科技 · yiyu028.com · All Rights Reserved</p>
-  <p style="margin-top:8px;opacity:0.5">Powered by AI · 让创作更简单</p>
+  <p>© 2025 毅鱼数字科技 · yiyu0328.com</p>
+  <p style="opacity:.5">Powered by AI · 让创作更简单</p>
 </footer>
 
 <script>
-// Scroll animations
-const fadeEls = document.querySelectorAll('.fade-in');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}
-  });
-},{threshold:0.15});
-fadeEls.forEach(el=>observer.observe(el));
+/* ═══ CURSOR GLOW ═══ */
+const glow=document.getElementById('glow');
+document.addEventListener('mousemove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px';glow.style.opacity='1'});
+document.addEventListener('mouseleave',()=>{glow.style.opacity='0'});
+document.addEventListener('touchmove',e=>{const t=e.touches[0];if(t){glow.style.left=t.clientX+'px';glow.style.top=t.clientY+'px';glow.style.opacity='1';setTimeout(()=>glow.style.opacity='0',500)}},{passive:true});
 
-// Nav scroll effect
-window.addEventListener('scroll',()=>{
-  document.getElementById('nav').classList.toggle('scroll',window.scrollY>50);
-});
+/* ═══ PARTICLES ═══ */
+const c=document.getElementById('pc'),ctx=c.getContext('2d');
+let pts=[],mx=-200,my=-200;
+function rc(){c.width=innerWidth;c.height=innerHeight}rc();window.addEventListener('resize',rc);
+class Pt{constructor(){this.r()}
+  r(){this.x=Math.random()*innerWidth;this.y=Math.random()*innerHeight;this.vx=(Math.random()-.5)*.4;this.vy=(Math.random()-.5)*.4;this.s=Math.random()*2+1;this.o=Math.random()*.25+.08}
+  u(){this.x+=this.vx;this.y+=this.vy;if(this.x<0)this.x=innerWidth;if(this.x>innerWidth)this.x=0;if(this.y<0)this.y=innerHeight;if(this.y>innerHeight)this.y=0}
+  d(){const dx=mx-this.x,dy=my-this.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<160){this.x+=dx*dist*.00004;this.y+=dy*dist*.00004}
+    ctx.beginPath();ctx.arc(this.x,this.y,this.s,0,Math.PI*2);const co=dist<130?'rgba(108,92,231,'+(.35-dist*.0025)+')':'rgba(108,92,231,'+this.o+')';ctx.fillStyle=co;ctx.fill()}}
+for(let i=0;i<55;i++){const p=new Pt();p.x=Math.random()*innerWidth;p.y=Math.random()*innerHeight;pts.push(p)}
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+document.addEventListener('touchmove',e=>{const t=e.touches[0];mx=t.clientX;my=t.clientY},{passive:true});
+function anim(){ctx.clearRect(0,0,c.width,c.height);pts.forEach(p=>{p.u();p.d()});requestAnimationFrame(anim)}anim();
 
-// Go to section handler
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    const target=document.querySelector(a.getAttribute('href'));
-    if(target){
-      e.preventDefault();
-      target.scrollIntoView({behavior:'smooth'});
-    }
-  });
-});
+/* ═══ RIPPLE ═══ */
+document.querySelectorAll('.btn,.dlb').forEach(b=>{b.addEventListener('click',function(e){const r=document.createElement('span');r.className='ripple';const rect=this.getBoundingClientRect(),size=Math.max(rect.width,rect.height);r.style.width=r.style.height=size+'px';r.style.left=(e.clientX-rect.left-size/2)+'px';r.style.top=(e.clientY-rect.top-size/2)+'px';this.appendChild(r);setTimeout(()=>r.remove(),600)})});
 
-// PWA install
-let deferredPrompt;
-window.addEventListener('beforeinstallprompt',e=>{
-  e.preventDefault();deferredPrompt=e;
-});
-window.pwaInstall=async function(){
-  if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice}
-  else{
-    const isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent);
-    alert(isIOS?'请用Safari点底部分享按钮→添加到主屏幕':'请用Chrome点右上角→添加到主屏幕');
-  }
-};
+/* ═══ REVEAL ═══ */
+const revs=document.querySelectorAll('.rev');const ob=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');ob.unobserve(e.target)}})},{threshold:.15});revs.forEach(el=>ob.observe(el));
+
+/* ═══ NAV ═══ */
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',scrollY>50)});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}})});
+
+/* ═══ COUNTER ═══ */
+const counters=document.querySelectorAll('[data-n]');const co=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const el=e.target,t=+el.dataset.n,dur=1500,inc=t/(dur/16);let cur=0;function up(){cur+=inc;if(cur>=t){el.textContent=t;return}el.textContent=Math.floor(cur);requestAnimationFrame(up)}up();co.unobserve(el)}})},{threshold:.5});counters.forEach(el=>{co.observe(el);el.textContent='0'});
+
+/* ═══ TILT ═══ */
+document.querySelectorAll('.pc').forEach(card=>{card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,rx=(y-r.height/2)/18,ry=-(x-r.width/2)/18;card.style.transform='perspective(1000px) rotateX('+rx+'deg) rotateY('+ry+'deg) translateY(-6px)'});card.addEventListener('mouseleave',()=>{card.style.transform=''})});
+
+/* ═══ NAV ACTIVE ═══ */
+const secs=document.querySelectorAll('section[id]'),nla=document.querySelectorAll('.nlk a:not(.nav-cta)');
+window.addEventListener('scroll',()=>{let cur='';secs.forEach(s=>{if(scrollY>=s.offsetTop-100)cur=s.id});nla.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+cur?'var(--brand)':'var(--text2)';a.style.background=a.getAttribute('href')==='#'+cur?'var(--blight)':'transparent'})});
+
+/* ═══ PWA ═══ */
+let dp;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e});
+window.pwaInstall=function(){if(dp){dp.prompt()}else{const ios=/iPad|iPhone|iPod/.test(navigator.userAgent);alert(ios?'Safari打开 → 底部分享 → 添加到主屏幕':'Chrome打开 → 右上角⋮ → 添加到主屏幕')}};
 </script>
 </body>
 </html>
