@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>毅鱼数字科技 — yiyu028.com</title>
+<meta name="description" content="毅鱼数字科技，AI驱动的内容创作平台。毅鱼漫剧、智能工具、数字产品。">
+<meta name="theme-color" content="#FF5F1F">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%23FF5F1F'/><text x='50' y='68' text-anchor='middle' fill='white' font-size='52' font-weight='bold'>毅</text></svg>">
+<style>
+:root {
+  --bg: #0a0a14;
+  --bg2: #111122;
+  --bg3: #1a1a2e;
+  --accent: #FF5F1F;
+  --accent2: #FF8C42;
+  --gold: #F5A623;
+  --text: #f0f0f5;
+  --text2: #a0a0b8;
+  --card: rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.06);
+  --maxw: 1100px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'PingFang SC','Microsoft YaHei',-apple-system,sans-serif;
+  background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;
+  line-height:1.6;
+}
+
+/* === NAV === */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(10,10,20,0.85);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);padding:0 24px;
+  transition:all .3s;
+}
+nav.scroll{background:rgba(10,10,20,0.95);box-shadow:0 4px 30px rgba(0,0,0,0.5)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-icon{
+  width:40px;height:40px;border-radius:12px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;font-weight:900;color:#fff;
+}
+.logo-text{font-size:20px;font-weight:800;color:var(--text);letter-spacing:2px}
+.logo-sub{font-size:10px;color:var(--text2);letter-spacing:3px;margin-top:-2px}
+.nav-links{display:flex;gap:32px}
+.nav-links a{
+  color:var(--text2);text-decoration:none;font-size:14px;font-weight:500;
+  transition:color .2s;position:relative
+}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;
+  background:var(--accent);transform:scaleX(0);transition:transform .2s
+}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+
+/* === SECTIONS === */
+section{padding:100px 24px;max-width:var(--maxw);margin:0 auto}
+.section-badge{
+  display:inline-block;padding:6px 16px;border-radius:20px;
+  font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  background:rgba(255,95,31,0.1);color:var(--accent);margin-bottom:20px;
+}
+.section-title{font-size:42px;font-weight:900;letter-spacing:2px;margin-bottom:16px;line-height:1.2}
+.section-desc{font-size:17px;color:var(--text2);max-width:600px;margin-bottom:48px}
+
+/* === HERO === */
+.hero{
+  padding:160px 24px 120px;max-width:var(--maxw);margin:0 auto;
+  display:flex;align-items:center;gap:60px;min-height:100vh;
+}
+.hero-left{flex:1}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 18px;border-radius:24px;
+  background:rgba(255,95,31,0.08);border:1px solid rgba(255,95,31,0.2);
+  font-size:13px;color:var(--accent);margin-bottom:28px
+}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(255,95,31,0.4)}50%{opacity:0.6;box-shadow:0 0 0 8px rgba(255,95,31,0)}}
+.hero h1{font-size:56px;font-weight:900;line-height:1.15;letter-spacing:3px;margin-bottom:20px}
+.hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:18px;color:var(--text2);margin-bottom:36px;max-width:500px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 32px;border-radius:14px;font-size:16px;font-weight:700;
+  text-decoration:none;transition:all .3s;cursor:pointer;border:none
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#fff;box-shadow:0 8px 30px rgba(255,95,31,0.3)
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(255,95,31,0.4)}
+.btn-ghost{
+  background:rgba(255,255,255,0.06);color:var(--text);
+  border:1px solid var(--border)
+}
+.btn-ghost:hover{background:rgba(255,255,255,0.1)}
+.btn-group{display:flex;gap:14px;flex-wrap:wrap}
+
+.hero-right{
+  flex:1;display:flex;justify-content:center;align-items:center;
+  position:relative
+}
+.hero-phone{
+  width:280px;height:560px;border-radius:36px;
+  background:var(--bg3);border:3px solid var(--border);
+  box-shadow:0 30px 80px rgba(255,95,31,0.15),0 0 120px rgba(255,95,31,0.08);
+  position:relative;overflow:hidden;
+}
+.hero-phone::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,transparent,var(--accent),var(--accent2),transparent)
+}
+.phone-screen{
+  padding:20px;height:100%;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center
+}
+.phone-icon{font-size:72px;margin-bottom:16px}
+.phone-app-name{font-size:24px;font-weight:900;letter-spacing:3px;margin-bottom:8px}
+.phone-app-desc{font-size:13px;color:var(--text2)}
+.hero-glow{
+  position:absolute;width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,95,31,0.12) 0%,transparent 70%);
+  pointer-events:none;z-index:-1
+}
+.hero-float{animation:float 4s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+
+/* === PRODUCTS GRID === */
+.products-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px
+}
+.product-card{
+  background:var(--card);border:1px solid var(--border);border-radius:20px;
+  padding:32px;transition:all .3s;position:relative;overflow:hidden
+}
+.product-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(255,95,31,0.3);box-shadow:0 20px 60px rgba(255,95,31,0.08)
+}
+.product-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  opacity:0;transition:opacity .3s
+}
+.product-card:hover::before{opacity:1}
+.product-icon{font-size:48px;margin-bottom:20px}
+.product-name{font-size:22px;font-weight:800;margin-bottom:8px}
+.product-desc{font-size:14px;color:var(--text2);margin-bottom:20px;line-height:1.7}
+.product-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.product-tag{
+  padding:4px 12px;border-radius:12px;font-size:11px;font-weight:600;
+  background:rgba(255,95,31,0.08);color:var(--accent)
+}
+.product-link{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--accent);text-decoration:none;font-size:14px;font-weight:600;
+  transition:gap .2s
+}
+.product-link:hover{gap:12px}
+
+/* === DOWNLOAD SECTION === */
+.download-hero{
+  text-align:center;padding:120px 24px 60px;
+  background:radial-gradient(ellipse at center,rgba(255,95,31,0.06) 0%,transparent 70%)
+}
+.download-card{
+  max-width:480px;margin:0 auto;
+  background:var(--card);border:1px solid var(--border);border-radius:24px;
+  padding:40px;text-align:center
+}
+.download-card .icon{font-size:80px;margin-bottom:20px}
+.download-card .name{font-size:28px;font-weight:900;letter-spacing:3px;margin-bottom:8px}
+.download-card .version{font-size:13px;color:var(--accent);margin-bottom:24px}
+.download-btn{
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  width:100%;padding:18px;border-radius:16px;
+  background:linear-gradient(135deg,#FF5F1F,#e8501a);
+  color:#fff;font-size:18px;font-weight:700;text-decoration:none;
+  transition:all .3s;margin-bottom:12px
+}
+.download-btn:hover{transform:scale(1.02);box-shadow:0 12px 40px rgba(255,95,31,0.3)}
+.download-btn-small{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;padding:14px;border-radius:16px;
+  background:rgba(255,255,255,0.05);border:1px solid var(--border);
+  color:var(--text);font-size:14px;font-weight:600;text-decoration:none;
+  transition:all .3s;
+  margin-bottom:8px
+}
+.download-btn-small:hover{background:rgba(255,255,255,0.08)}
+
+/* === INSTALL GUIDE === */
+.guide-steps{display:flex;flex-direction:column;gap:20px;max-width:600px;margin:0 auto}
+.guide-step{
+  display:flex;gap:20px;align-items:flex-start;
+  background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px
+}
+.step-num{
+  width:44px;height:44px;border-radius:12px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;font-weight:900;color:#fff
+}
+.step-content h4{font-size:17px;font-weight:700;margin-bottom:4px}
+.step-content p{font-size:14px;color:var(--text2)}
+
+/* === STATS === */
+.stats-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px
+}
+.stat{
+  text-align:center;padding:24px;
+  background:var(--card);border:1px solid var(--border);border-radius:16px
+}
+.stat-num{font-size:36px;font-weight:900;color:var(--accent);margin-bottom:4px}
+.stat-label{font-size:13px;color:var(--text2)}
+/* === FOOTER === */
+footer{
+  border-top:1px solid var(--border);padding:48px 24px;
+  text-align:center;color:var(--text2);font-size:14px
+}
+footer a{color:var(--accent);text-decoration:none}
+.footer-links{display:flex;justify-content:center;gap:32px;margin-bottom:20px}
+.footer-links a{color:var(--text2);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--accent)}
+
+/* === MOBILE === */
+@media(max-width:768px){
+  .hero{flex-direction:column;text-align:center;padding:120px 24px 60px}
+  .hero h1{font-size:36px}
+  .hero p{max-width:100%}
+  .btn-group{justify-content:center}
+  .hero-phone{width:200px;height:400px}
+  .nav-links{display:none}
+  .section-title{font-size:30px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  section{padding:60px 16px}
+}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(30px);transition:all .6s ease-out}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">毅</div>
+      <div>
+        <div class="logo-text">毅鱼科技</div>
+        <div class="logo-sub">yiyu028.com</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#home" class="active">首页</a>
+      <a href="#products">产品</a>
+      <a href="#download">下载</a>
+      <a href="#about">关于</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-badge"><span class="dot"></span>AI驱动的内容创作平台</div>
+    <h1>让每个人<br><span>都能创作</span></h1>
+    <p>毅鱼数字科技致力于用AI技术降低内容创作门槛。旗下毅鱼漫剧，一键生成AI短剧，从剧本到成片全自动。</p>
+    <div class="btn-group">
+      <a href="#download" class="btn btn-primary">📥 下载App</a>
+      <a href="#products" class="btn btn-ghost">查看产品 →</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-glow"></div>
+    <div class="hero-phone hero-float">
+      <div class="phone-screen">
+        <div class="phone-icon">🎬</div>
+        <div class="phone-app-name">毅鱼漫剧</div>
+        <div class="phone-app-desc">AI智能短剧创作平台</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ STATS ══════════ -->
+<section>
+  <div class="stats-grid">
+    <div class="stat fade-in">
+      <div class="stat-num">3</div>
+      <div class="stat-label">核心产品线</div>
+    </div>
+    <div class="stat fade-in">
+      <div class="stat-num">AI</div>
+      <div class="stat-label">智能驱动引擎</div>
+    </div>
+    <div class="stat fade-in">
+      <div class="stat-num">24h</div>
+      <div class="stat-label">全自动创作</div>
+    </div>
+    <div class="stat fade-in">
+      <div class="stat-num">∞</div>
+      <div class="stat-label">无限创作可能</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PRODUCTS ══════════ -->
+<section id="products">
+  <div class="section-badge">产品中心</div>
+  <div class="section-title">我们的产品</div>
+  <div class="section-desc">AI赋能内容创作，让技术服务于创意</div>
+  <div class="products-grid">
+    <div class="product-card fade-in">
+      <div class="product-icon">🎬</div>
+      <div class="product-name">毅鱼漫剧</div>
+      <div class="product-desc">AI驱动的短剧全自动生成平台。输入灵感即可自动完成剧本、角色、分镜、配音、画面和视频全流程创作。从编剧到成片，一站式完成。</div>
+      <div class="product-tags">
+        <span class="product-tag">AI编剧</span>
+        <span class="product-tag">智能分镜</span>
+        <span class="product-tag">自动配音</span>
+        <span class="product-tag">视频合成</span>
+      </div>
+      <a href="#download" class="product-link">立即下载 →</a>
+    </div>
+    <div class="product-card fade-in">
+      <div class="product-icon">📊</div>
+      <div class="product-name">毅鱼仓储</div>
+      <div class="product-desc">智能仓库管理系统。支持入库、出库、盘点、扫码、多端协作。实时库存预警，全流程可追溯，适用中小型企业仓库管理。</div>
+      <div class="product-tags">
+        <span class="product-tag">扫码出入库</span>
+        <span class="product-tag">库存预警</span>
+        <span class="product-tag">多端协作</span>
+      </div>
+      <a href="#" class="product-link">敬请期待 →</a>
+    </div>
+    <div class="product-card fade-in">
+      <div class="product-icon">🎓</div>
+      <div class="product-name">毅鱼教育</div>
+      <div class="product-desc">精品微课课件生成平台。输入讲义自动生成精美PPT与互动课件，支持编程教学、音乐、医学等多种领域。</div>
+      <div class="product-tags">
+        <span class="product-tag">智能排版</span>
+        <span class="product-tag">互动课件</span>
+        <span class="product-tag">多领域覆盖</span>
+      </div>
+      <a href="#" class="product-link">敬请期待 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ DOWNLOAD ══════════ -->
+<section id="download">
+  <div class="section-badge">下载中心</div>
+  <div class="section-title">毅鱼漫剧</div>
+  <div class="section-desc">下载安装，开启你的AI创作之旅</div>
+
+  <div class="download-card fade-in">
+    <div class="icon">🎬</div>
+    <div class="name">毅鱼漫剧</div>
+    <div class="version">v1.0.0 · 47.2 MB</div>
+
+    <a href="yiwei-comics.apk" class="download-btn" download>
+      <span style="font-size:24px">🤖</span> 下载 Android 安装包
+    </a>
+
+    <a href="javascript:void(0)" class="download-btn-small" onclick="pwaInstall()">
+      <span style="font-size:20px">🍎</span> iOS — 添加到主屏幕（PWA）
+    </a>
+
+    <a href="/app" class="download-btn-small" target="_blank">
+      <span style="font-size:20px">🌐</span> 直接打开 Web 版
+    </a>
+  </div>
+
+  <div style="margin-top:60px">
+    <div class="section-badge" style="margin:0 auto;display:table">安装教程</div>
+    <h3 style="text-align:center;font-size:28px;margin:20px 0 40px;font-weight:800">三分钟快速安装</h3>
+    <div class="guide-steps">
+      <div class="guide-step fade-in">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>下载安装包</h4>
+          <p>点击上方下载按钮获取毅鱼漫剧安装包。Android用户下载APK文件，iOS用户使用PWA方案。</p>
+        </div>
+      </div>
+      <div class="guide-step fade-in">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>安装应用</h4>
+          <p><b>Android</b>：打开APK文件，允许安装未知来源应用，按提示完成安装。<br><b>iOS</b>：Safari浏览器打开，点击分享 → 添加到主屏幕。</p>
+        </div>
+      </div>
+      <div class="guide-step fade-in">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>开始创作</h4>
+          <p>打开毅鱼漫剧App，输入灵感或主题，AI将自动生成完整的短剧内容。从剧本到视频，一键搞定！</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div style="margin-top:60px">
+    <div class="section-badge" style="margin:0 auto;display:table">常见问题</div>
+    <h3 style="text-align:center;font-size:28px;margin:20px 0 40px;font-weight:800">FAQ</h3>
+    <div class="products-grid">
+      <div class="product-card fade-in">
+        <div class="product-name" style="font-size:17px">❓ 安装包安全吗？</div>
+        <div class="product-desc">毅鱼漫剧APK经过严格测试和签名，不会被系统误报。安装时如提示"未知来源"，请放心授权。</div>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-name" style="font-size:17px">❓ iOS如何安装？</div>
+        <div class="product-desc">iOS采用PWA方案（不通过App Store）。Safari打开网站 → 分享 → 添加到主屏幕，桌面即出现App图标。</div>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-name" style="font-size:17px">❓ 需要联网吗？</div>
+        <div class="product-desc">AI创作需要联网调用模型服务。但已生成的内容支持离线浏览和回看。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ABOUT ══════════ -->
+<section id="about">
+  <div class="section-badge">关于我们</div>
+  <div class="section-title">毅鱼数字科技</div>
+  <div class="section-desc">成立于2025年，致力于用AI技术赋能内容创作，让每个人都能成为创作者</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <div class="product-card fade-in" style="flex:1;min-width:280px">
+      <div class="product-icon">🎯</div>
+      <div class="product-name">我们的使命</div>
+      <div class="product-desc">降低内容创作门槛，让AI技术普惠每个人。无论是短剧、教育还是企业应用，我们都提供简单易用的智能工具。</div>
+    </div>
+    <div class="product-card fade-in" style="flex:1;min-width:280px">
+      <div class="product-icon">📍</div>
+      <div class="product-name">联系我们</div>
+      <div class="product-desc" style="line-height:2.2">
+        🌐 www.yiyu028.com<br>
+        📧 contact@yiyu028.com<br>
+        📍 四川省成都市<br>
+        💬 微信公众号：毅鱼科技
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="#home">首页</a>
+    <a href="#products">产品</a>
+    <a href="#download">下载</a>
+    <a href="#about">关于</a>
+  </div>
+  <p>© 2025 毅鱼数字科技 · yiyu028.com · All Rights Reserved</p>
+  <p style="margin-top:8px;opacity:0.5">Powered by AI · 让创作更简单</p>
+</footer>
+
+<script>
+// Scroll animations
+const fadeEls = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}
+  });
+},{threshold:0.15});
+fadeEls.forEach(el=>observer.observe(el));
+
+// Nav scroll effect
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scroll',window.scrollY>50);
+});
+
+// Go to section handler
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const target=document.querySelector(a.getAttribute('href'));
+    if(target){
+      e.preventDefault();
+      target.scrollIntoView({behavior:'smooth'});
+    }
+  });
+});
+
+// PWA install
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt',e=>{
+  e.preventDefault();deferredPrompt=e;
+});
+window.pwaInstall=async function(){
+  if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice}
+  else{
+    const isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent);
+    alert(isIOS?'请用Safari点底部分享按钮→添加到主屏幕':'请用Chrome点右上角→添加到主屏幕');
+  }
+};
+</script>
+</body>
+</html>
