@@ -82,6 +82,12 @@ h2{font-size:clamp(28px,5vw,44px);font-weight:900;letter-spacing:1px;margin-bott
 .pc .t{padding:4px 12px;border-radius:10px;font-size:11px;font-weight:600;background:var(--bg2);color:var(--text2)}
 .pc .lnk{display:inline-flex;align-items:center;gap:6px;color:var(--brand);text-decoration:none;font-size:14px;font-weight:600;transition:gap .2s}
 .pc .lnk:hover{gap:12px}
+.pc-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+.pc-btn-primary,.pc-btn-secondary{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:12px;font-size:13px;font-weight:700;text-decoration:none;transition:all var(--trans)}
+.pc-btn-primary{background:linear-gradient(135deg,#FF5F1F,#FF8C42);color:#fff;box-shadow:0 4px 14px rgba(255,95,31,.25)}
+.pc-btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,95,31,.4)}
+.pc-btn-secondary{background:var(--bg2);color:var(--text2);border:1px solid rgba(0,0,0,.06)}
+.pc-btn-secondary:hover{background:var(--bg);transform:translateY(-2px);box-shadow:var(--shadow-sm)}
 .swrap{background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);margin-top:60px;overflow:hidden}
 .sg{display:grid;grid-template-columns:repeat(4,1fr)}
 .si3{padding:40px 24px;text-align:center;border-right:1px solid rgba(0,0,0,.04);transition:all var(--trans);cursor:default}
@@ -176,7 +182,10 @@ footer p{color:var(--text3);font-size:13px;line-height:2}
         <h3>毅鱼漫剧</h3>
         <p class="desc">AI全自动短剧生成平台。输入灵感，AI自动完成剧本、角色、分镜、配音、画面、视频全流程。从编剧到成片，一键搞定。</p>
         <div class="tags"><span class="t">AI编剧</span><span class="t">智能分镜</span><span class="t">自动配音</span><span class="t">视频合成</span></div>
-        <a href="http://192.168.5.30:3456" class="lnk" target="_blank">打开毅鱼漫剧 →</a>
+        <div class="pc-actions">
+          <a href="http://192.168.5.30:3456" class="pc-btn-primary" target="_blank">🎬 打开 App</a>
+          <a href="https://api.chatfire.site/" class="pc-btn-secondary" target="_blank">🔑 获取 API Key</a>
+        </div>
       </div>
       <div class="pc rev">
         <div class="pci pci-p">📊</div>
@@ -216,6 +225,7 @@ footer p{color:var(--text3);font-size:13px;line-height:2}
       <a href="yiwei-comics.apk" class="dlb dla" download>🤖 下载 Android 安装包</a>
       <button class="dlb dli2" onclick="pwaInstall()">🍎 iOS · 添加到主屏幕</button>
       <a href="http://192.168.5.30:3456" class="dlb dlw" target="_blank">🌐 直接打开 Web 版</a>
+      <a href="https://api.chatfire.site/" class="dlb dlw" target="_blank" style="background:var(--bg2);margin-top:4px">🔑 购买独立 API Key → api.chatfire.site</a>
     </div>
     <div style="margin-top:60px">
       <div class="tag tb" style="margin:0 auto;display:table">安装指南</div>
